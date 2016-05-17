@@ -71,7 +71,11 @@ export default class Tabbar extends Component {
         this.prevContentRef = tab.contentRef;
         this.prevTabRef = tab.tabRef;
       }
-
+      
+      if(this.props.onSelect) {
+        this.props.onSelect(tabName);
+      }
+      
       return true
     });
   }
